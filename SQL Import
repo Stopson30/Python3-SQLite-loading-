@@ -1,0 +1,10 @@
+import sqlite3 as sql
+
+conn = sqlite3.connect("Training.db")
+c = conn.cursor()  #initializing the cursor method
+c.execute("CREATE TABLE IF NOT EXISTS iceCubeMelting(time INT "+ "PRIMARY KEY, temperature REAL, date TEXT)")
+c.execute("INSERT INTO iceCubeMelting VALUES"+
+         "(0,27.0,28-08-2017)")
+conn.commit
+c.close
+conn.close
